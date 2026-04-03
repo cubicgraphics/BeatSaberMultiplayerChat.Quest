@@ -145,6 +145,15 @@ namespace MultiplayerChat::Audio {
 
         for (int i = 0; i < 3; i++) {
             auto peekSampleCount = _streamBuffer.Peek(_playbackBuffer, 0, get_clipFeedSize());
+			
+			_bufferPos += peekSampleCount;
+            if (_bufferPos >= get_clipSampleSize())
+                _bufferIterations++;
+            _bufferPos %= get_clipSampleSize();
+
+            if (playbackPos < _lastPlaybackPos)
+                _playbackIterations++;
+            _lastPlaybackPos = playbackPos;
 
             if (peekSampleCount == 0) {
                 _havePendingFragments = false;
@@ -171,15 +180,6 @@ namespace MultiplayerChat::Audio {
             _streamBuffer.Advance(peekSampleCount);
 
             _audioClip->SetData(_playbackBuffer, _bufferPos);
-
-            _bufferPos += peekSampleCount;
-            if (_bufferPos >= get_clipSampleSize())
-                _bufferIterations++;
-            _bufferPos %= get_clipSampleSize();
-
-            if (playbackPos < _lastPlaybackPos)
-                _playbackIterations++;
-            _lastPlaybackPos = playbackPos;
 
             _deadFrames = 0;
         }
