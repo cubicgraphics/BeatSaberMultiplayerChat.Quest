@@ -39,12 +39,12 @@
   "dependencies": [
     {
       "id": "libil2cpp",
-      "versionRange": "^0.3.0",
+      "versionRange": "^0.4.0",
       "additionalData": {}
     },
     {
       "id": "scotland2",
-      "versionRange": "^0.1.4",
+      "versionRange": "^0.1.6",
       "additionalData": {
         "includeQmod": false,
         "private": true
@@ -52,27 +52,27 @@
     },
     {
       "id": "beatsaber-hook",
-      "versionRange": "^5.1.9",
+      "versionRange": "^6.4.2",
       "additionalData": {}
     },
     {
       "id": "bs-cordl",
-      "versionRange": "^3700.0.0",
+      "versionRange": "4008.*",
       "additionalData": {}
     },
     {
       "id": "custom-types",
-      "versionRange": "^0.17.10",
+      "versionRange": "^0.18.3",
       "additionalData": {}
     },
     {
       "id": "lapiz",
-      "versionRange": "^0.2.12",
+      "versionRange": "^0.2.23",
       "additionalData": {}
     },
     {
       "id": "bsml",
-      "versionRange": "^0.4.43",
+      "versionRange": "^0.4.55",
       "additionalData": {
         "private": true
       }
@@ -85,8 +85,8 @@
       }
     },
     {
-      "id": "paper",
-      "versionRange": "^3.6.3",
+      "id": "paper2_scotland2",
+      "versionRange": "^4.6.4",
       "additionalData": {}
     },
     {
