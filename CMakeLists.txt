@@ -31,6 +31,14 @@ execute_process(COMMAND git rev-parse --short HEAD OUTPUT_VARIABLE GIT_SHORT_COM
 execute_process(COMMAND git rev-parse HEAD OUTPUT_VARIABLE GIT_COMMIT)
 execute_process(COMMAND git diff-index --quiet HEAD RESULT_VARIABLE GIT_MODIFIED)
 
+# Set defaults if commands failed or returned empty
+if(NOT GIT_USER)
+  set(GIT_USER "unknown")
+endif()
+
+if(NOT GIT_BRANCH)
+  set(GIT_BRANCH "unknown")
+endif()
 
 string(STRIP ${GIT_USER} GIT_USER)
 string(STRIP ${GIT_BRANCH} GIT_BRANCH)
