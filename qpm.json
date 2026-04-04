@@ -79,7 +79,7 @@
     },
     {
       "id": "multiplayer-core",
-      "versionRange": "=1.5.0-Dev",
+      "versionRange": "^1.6.5",
       "additionalData": {
         "includeQmod": false
       }
